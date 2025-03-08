@@ -12,9 +12,9 @@ import os
 import sys
 import librosa
 import torchaudio
-from utils.misc import power_compress, power_uncompress, stft, istft, compute_fbank
-from utils.bandwidth_sub import bandwidth_sub
-from dataloader.meldataset import mel_spectrogram
+from clearvoice.utils.misc import power_compress, power_uncompress, stft, istft, compute_fbank
+from clearvoice.utils.bandwidth_sub import bandwidth_sub
+from clearvoice.dataloader.meldataset import mel_spectrogram
 
 # Constant for normalizing audio values
 MAX_WAV_VALUE = 32768.0

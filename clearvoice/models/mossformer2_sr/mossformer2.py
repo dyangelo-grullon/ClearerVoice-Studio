@@ -8,7 +8,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import copy
-from models.mossformer2_sr.mossformer2_block import ScaledSinuEmbedding, MossformerBlock_GFSMN, MossformerBlock
+from clearvoice.models.mossformer2_sr.mossformer2_block import ScaledSinuEmbedding, MossformerBlock_GFSMN, MossformerBlock
 
 
 EPS = 1e-8

@@ -3,11 +3,11 @@ import torch.nn.functional as F
 import torch.nn as nn
 from torch.nn import Conv1d, ConvTranspose1d, AvgPool1d, Conv2d
 from torch.nn.utils import weight_norm, remove_weight_norm, spectral_norm
-from models.mossformer2_sr.utils import init_weights, get_padding
-from models.mossformer2_sr.mossformer2 import MossFormer_MaskNet
-from models.mossformer2_sr.snake import Snake1d
+from clearvoice.models.mossformer2_sr.utils import init_weights, get_padding
+from clearvoice.models.mossformer2_sr.mossformer2 import MossFormer_MaskNet
+from clearvoice.models.mossformer2_sr.snake import Snake1d
 from typing import Optional, List, Union, Dict, Tuple
-from models.mossformer2_sr.env import AttrDict
+from clearvoice.models.mossformer2_sr.env import AttrDict
 import typing
 from torchaudio.transforms import Spectrogram, Resample
 

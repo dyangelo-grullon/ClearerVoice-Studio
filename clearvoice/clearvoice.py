@@ -1,4 +1,4 @@
-from network_wrapper import network_wrapper
+from clearvoice.network_wrapper import network_wrapper
 import os
 import warnings
 warnings.filterwarnings("ignore")

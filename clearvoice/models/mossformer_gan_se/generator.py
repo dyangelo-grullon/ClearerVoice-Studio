@@ -9,12 +9,12 @@ from packaging.version import parse as V
 from torch.nn import init
 from torch.nn.parameter import Parameter
 
-from models.mossformer_gan_se.fsmn import UniDeepFsmn
-from models.mossformer_gan_se.conv_module import ConvModule
-from models.mossformer_gan_se.mossformer import MossFormer
-from models.mossformer_gan_se.se_layer import SELayer
-from models.mossformer_gan_se.get_layer_from_string import get_layer
-from models.mossformer_gan_se.discriminator import Discriminator
+from clearvoice.models.mossformer_gan_se.fsmn import UniDeepFsmn
+from clearvoice.models.mossformer_gan_se.conv_module import ConvModule
+from clearvoice.models.mossformer_gan_se.mossformer import MossFormer
+from clearvoice.models.mossformer_gan_se.se_layer import SELayer
+from clearvoice.models.mossformer_gan_se.get_layer_from_string import get_layer
+from clearvoice.models.mossformer_gan_se.discriminator import Discriminator
 
 # Check if the installed version of PyTorch is 1.9.0 or higher
 is_torch_1_9_plus = V(torch.__version__) >= V("1.9.0")

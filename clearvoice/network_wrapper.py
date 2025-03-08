@@ -1,5 +1,6 @@
 import argparse
 import json
+import os
 import yamlargparse
 import torch.nn as nn
 
@@ -26,7 +27,9 @@ class network_wrapper(nn.Module):
         Sets the configuration path and parses all the required parameters such as 
         input/output paths, model settings, and FFT parameters.
         """
-        self.config_path = 'config/inference/' + self.model_name + '.yaml'
+        # Get the directory where clearvoice package is installed
+        package_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        self.config_path = os.path.join(package_dir, 'clearvoice', 'config', 'inference', self.model_name + '.yaml')
         parser = yamlargparse.ArgumentParser("Settings")
 
         # General model and inference settings
@@ -60,7 +63,9 @@ class network_wrapper(nn.Module):
         This method sets parameters such as input/output paths, model configurations, 
         and encoder/decoder settings for the MossFormer2-based speech separation model.
         """
-        self.config_path = 'config/inference/' + self.model_name + '.yaml'
+        # Get the directory where clearvoice package is installed
+        package_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        self.config_path = os.path.join(package_dir, 'clearvoice', 'config', 'inference', self.model_name + '.yaml')
         parser = yamlargparse.ArgumentParser("Settings")
 
         # General model and inference settings
@@ -111,7 +116,9 @@ class network_wrapper(nn.Module):
         Sets the configuration path and parses all the required parameters such as
         input/output paths, model settings, and FFT parameters.
         """
-        self.config_path = 'config/inference/' + self.model_name + '.yaml'
+        # Get the directory where clearvoice package is installed
+        package_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        self.config_path = os.path.join(package_dir, 'clearvoice', 'config', 'inference', self.model_name + '.yaml')
         parser = yamlargparse.ArgumentParser("Settings")
 
         # General model and inference settings
@@ -141,7 +148,9 @@ class network_wrapper(nn.Module):
         Loads the arguments for the target speaker extraction (TSE) task using a YAML config file.
         Parameters include input/output paths, CUDA configurations, and decoding parameters.
         """
-        self.config_path = 'config/inference/' + self.model_name + '.yaml'
+        # Get the directory where clearvoice package is installed
+        package_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        self.config_path = os.path.join(package_dir, 'clearvoice', 'config', 'inference', self.model_name + '.yaml')
         parser = yamlargparse.ArgumentParser("Settings")
 
         # General model and inference settings
@@ -203,22 +212,22 @@ class network_wrapper(nn.Module):
 
         # Initialize the corresponding network based on the selected model
         if self.args.network == 'FRCRN_SE_16K':
-            from networks import CLS_FRCRN_SE_16K
+            from clearvoice.networks import CLS_FRCRN_SE_16K
             self.network = CLS_FRCRN_SE_16K(self.args)  # Load FRCRN model
         elif self.args.network == 'MossFormer2_SE_48K':
-            from networks import CLS_MossFormer2_SE_48K
+            from clearvoice.networks import CLS_MossFormer2_SE_48K
             self.network = CLS_MossFormer2_SE_48K(self.args)  # Load MossFormer2_SE model
         elif self.args.network == 'MossFormer2_SR_48K':
-            from networks import CLS_MossFormer2_SR_48K
+            from clearvoice.networks import CLS_MossFormer2_SR_48K
             self.network = CLS_MossFormer2_SR_48K(self.args)  #Load MossFormer2_SR model
         elif self.args.network == 'MossFormerGAN_SE_16K':
-            from networks import CLS_MossFormerGAN_SE_16K
+            from clearvoice.networks import CLS_MossFormerGAN_SE_16K
             self.network = CLS_MossFormerGAN_SE_16K(self.args)  # Load MossFormerGAN model
         elif self.args.network == 'MossFormer2_SS_16K':
-            from networks import CLS_MossFormer2_SS_16K
+            from clearvoice.networks import CLS_MossFormer2_SS_16K
             self.network = CLS_MossFormer2_SS_16K(self.args)  # Load MossFormer2 for separation
         elif self.args.network == 'AV_MossFormer2_TSE_16K':
-            from networks import CLS_AV_MossFormer2_TSE_16K
+            from clearvoice.networks import CLS_AV_MossFormer2_TSE_16K
             self.network = CLS_AV_MossFormer2_TSE_16K(self.args)  # Load AV MossFormer2 model for target speaker extraction
         else:
             # Print error message if no matching network is found

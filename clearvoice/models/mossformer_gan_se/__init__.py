@@ -1,0 +1,1 @@
+# Make mossformer_gan_se a proper Python package

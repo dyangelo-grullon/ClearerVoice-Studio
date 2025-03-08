@@ -15,9 +15,9 @@ from scenedetect.frame_timecode import FrameTimecode
 from scenedetect.stats_manager import StatsManager
 from scenedetect.detectors import ContentDetector
 
-from models.av_mossformer2_tse.faceDetector.s3fd import S3FD
+from clearvoice.models.av_mossformer2_tse.faceDetector.s3fd import S3FD
 
-from .decode import decode_one_audio_AV_MossFormer2_TSE_16K
+from clearvoice.utils.decode import decode_one_audio_AV_MossFormer2_TSE_16K
 
 
 

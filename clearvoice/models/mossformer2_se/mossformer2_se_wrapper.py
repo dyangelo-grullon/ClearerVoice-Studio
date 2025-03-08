@@ -1,4 +1,4 @@
-from models.mossformer2_se.mossformer2 import MossFormer_MaskNet
+from clearvoice.models.mossformer2_se.mossformer2 import MossFormer_MaskNet
 import torch.nn as nn
 
 class MossFormer2_SE_48K(nn.Module):

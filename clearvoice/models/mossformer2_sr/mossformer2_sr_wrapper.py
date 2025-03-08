@@ -1,4 +1,4 @@
-from models.mossformer2_sr.generator import Mossformer, Generator
+from clearvoice.models.mossformer2_sr.generator import Mossformer, Generator
 import torch.nn as nn
 
 class MossFormer2_SR_48K(nn.Module):

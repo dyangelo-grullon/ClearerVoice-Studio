@@ -8,10 +8,10 @@ import torch.nn.functional as F
 from torch import nn, einsum
 from einops import rearrange
 from rotary_embedding_torch import RotaryEmbedding
-from models.mossformer2_se.conv_module import ConvModule, GLU, FFConvM_Dilated
-from models.mossformer2_se.fsmn import UniDeepFsmn, UniDeepFsmn_dilated
+from clearvoice.models.mossformer2_se.conv_module import ConvModule, GLU, FFConvM_Dilated
+from clearvoice.models.mossformer2_se.fsmn import UniDeepFsmn, UniDeepFsmn_dilated
 from torchinfo import summary
-from models.mossformer2_se.layer_norm import CLayerNorm, GLayerNorm, GlobLayerNorm, ILayerNorm
+from clearvoice.models.mossformer2_se.layer_norm import CLayerNorm, GLayerNorm, GlobLayerNorm, ILayerNorm
 
 # Helper functions
 

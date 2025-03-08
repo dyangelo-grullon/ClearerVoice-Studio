@@ -7,7 +7,7 @@ import torchaudio
 import math
 
 from .mossformer.utils.one_path_flash_fsmn import Dual_Path_Model, SBFLASHBlock_DualA
-from models.av_mossformer2_tse.visual_frontend import Visual_encoder
+from clearvoice.models.av_mossformer2_tse.visual_frontend import Visual_encoder
 
 EPS = 1e-8
 
